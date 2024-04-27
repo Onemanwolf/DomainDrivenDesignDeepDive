@@ -43,11 +43,11 @@ Using the Ubiquitous language we discuss the business workflow or process and th
 
 - **Repositories** are used to manage the persistence of aggregates. Repositories are concerned only with persisting and retrieving aggregates. Repositories should be aligned to and use the language of the BoundedContext, and the operation should use the language of the business when naming methods and properties. We should place an abstraction layer between the dependent services and the client of the repository.
 
-- **Entities** are used to represent entities in the domain and are mutable meaning we expect them to change over time. Entities have identity and require consistency we must managed there state and track any changes.
+- **Entities** are mutable meaning we expect them to change over time. Entities have identity and require consistency. We must manage their state and track any changes over time.
 
-- **Value Objects** are used to represent values in the domain. They are used to represent values in the domain and are used to enforce immutability in the domain. Value objects represent things like money, dates, address, and other values that are used in the domain.
+- **Value Objects** do not have identity are identified by there properties. They are used to represent values in the domain and are used to enforce immutability at runtime in the domain. Value objects represent things like money, dates, address, and other values that are used in the domain.
 
-- **Domain Services** are used to encapsulate domain logic. They are used to encapsulate domain logic and are used to enforce domain rules in the domain.
+- **Domain Services** are used to encapsulate domain logic. Are also used to enforce domain rules in the domain that belong to the domain layer.
 
 When creating the domain model in code, use the language of the business to name the classes and methods. This will make the code easier to understand and maintain.
 
