@@ -83,17 +83,13 @@ Events are triggered by Commands, and the Commands are used to change the state 
 
 In the below image we can see the relationship between the Command and the Event. The Command is used to change the state of the A system, and the Event is used to communicate changes in the domain to other parts of the system here the B system.
 
-
-
-
-
-
+<figure>
 <img class="center" src="./images/EventIllustration.png" width="600" height="300"  >
 
 
 <p style="text-align: center;">figure 1: Command and Event relationship</p>
 We will discuss in detail Commands and Events in the next section.
-
+</figure>
 1. **Detailing the Event**: Identify the data that the event will carry. This is the data that is required by the downstream services or systems that handle this event in some cases. In some scenarios, the event could be a simple notification that something has happened, and no additional data is required. In case we could just pass the aggregate root identifier of the aggregate root that triggered the event. This is usually done by defining the event class with the necessary properties or fields that represent the data associated with the event.
 
     - Example: If you have an `OrderCreated` event, you might want to include the `orderId`, `customerId`, `orderDate`, and other relevant information in the event payload.
