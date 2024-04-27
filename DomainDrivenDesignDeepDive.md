@@ -41,7 +41,7 @@ Using the Ubiquitous language we discuss the business workflow or process and th
 
 ### Tactial Patterns that are used to model the domain model:
 
-These patterns are part of the solution space and should not be discussed with the domain experts. They are used to model the domain model in the codebase. **Avoid discussing these patterns with the domain experts**. 
+These patterns are part of the solution space and should not be discussed with the domain experts. They are used to model the domain model in the codebase. **Avoid discussing these patterns with the domain experts**.
 
 - **Factories** are used to create `aggregates`. They are used when there are complex business rules and invariants that need to be enforced consistency boundaries in the domain.
 
@@ -68,6 +68,8 @@ After discovering and defining Domain Events in Domain-Driven Design (DDD), the 
 Events have boundaries; these boundaries encapsulate the behavior and Business language of the Event in what Eric Evans defines as a Bounded Context. The Bounded Context represents a linguistic boundary based on the language of the business, and a Bounded Context is one of the artifacts we discover during the EventStorm workshop. This Bounded Context of the Event encapsulates the behavior of the Event. The Bounded Context is a way to encapsulate the behavior of the Event, and the Event is a way to communicate changes in the domain to other parts of the system.
 
 Events are triggered by Commands, and the Commands are used to change the state of the system. The Commands are used to change the state of the system, and the Events are used to communicate changes in the domain to other parts of the system.
+
+![](./images/EventIllustration.png)
 
 We will discuss in detail Commands and Events in the next section.
 
