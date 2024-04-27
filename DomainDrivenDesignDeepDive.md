@@ -39,6 +39,10 @@ Using the Ubiquitous language we discuss the business workflow or process and th
 
 - **External Dependencies** are used to represent external dependencies in the domain. We need to understand the external dependencies that are involved in the domain and how they interact with the domain. We need to understand how the effect the system and what challenges they present.
 
+### Tactial Patterns that are used to model the domain model:
+
+These patterns are part of the solution space and should not be discussed with the domain experts. They are used to model the domain model in the codebase. **Avoid discussing these patterns with the domain experts**. 
+
 - **Factories** are used to create `aggregates`. They are used when there are complex business rules and invariants that need to be enforced consistency boundaries in the domain.
 
 - **Repositories** are used to manage the persistence of aggregates. Repositories are concerned only with persisting and retrieving aggregates. Repositories should be aligned to and use the language of the BoundedContext, and the operation should use the language of the business when naming methods and properties. We should place an abstraction layer between the dependent services and the client of the repository.
