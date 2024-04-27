@@ -21,7 +21,7 @@ In this stage, we are focused on the business problem space and not the technica
 
 **Ubiquitous Language (UL)**: The Ubiquitous Language is the language of the business. It is the language of the business user and experts in the problem space. We also use the Ubiquitous Language in the solution space to name the classes and methods in the code.
 
-Using the Ubiquitous language we discuss the business workflow or process and this discussion will lead to artifacts that will be used to model the domain and the business processes. These artifacts will be used to create the domain model and the business processes that are involved in the domain. Additionally, artifacts will be represented in the codebase as classes and methods that will be used to implement the domain model and the business processes.
+Using the Ubiquitous language we discuss the business workflow or process and this discussion will lead to artifacts that will be used to model the domain model which is the logical model of the business processes. Additionally, artifacts will be represented in the codebase as classes and methods that will be used to implement the domain model and the business processes.
 
 **Artifacts**: These artifacts are:
 
@@ -29,7 +29,7 @@ Using the Ubiquitous language we discuss the business workflow or process and th
 
 - **Actor**: An actor is a person or system that executes a command or triggers an event in the domain. They are used to represent the people or systems that interact with the domain.
 
-- **Commands**: Commands are used to change the state of the system. They are used to trigger events in the domain and are used to change the state of the system. Commands are used to change the state of the system and are used to trigger events in the domain.
+- **Commands**: Commands are used to change the state of the system. They are used to trigger events in the domain and are used to change the state of the system.
 
 - **Events**: Events are used to communicate changes in the domain to other parts of the system. Additionally, they can trigger commands in other parts of the system.
 
