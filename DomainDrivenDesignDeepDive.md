@@ -37,15 +37,15 @@ Using the Ubiquitous language we discuss the business workflow or process and th
 
 - **ViewModels**: ViewModels are used by `Actors` and are displayed in the UI so person `Actors` can make decisions to execute a `Command`.
 
-- **External Dependencies**: External Dependencies are used to represent external dependencies in the domain. They are used to represent external dependencies in the domain and are used to enforce consistency boundaries in the domain.
+- **External Dependencies**: External Dependencies are used to represent external dependencies in the domain. We need to understand the external dependencies that are involved in the domain and how they interact with the domain. We need to understand how the effect the system and what challenges they present.
 
 - **Factories**: Factories are used to create `aggregates`. They are used when there are complex business rules and invariants that need to be enforced consistency boundaries in the domain.
 
 - **Repositories**: Repositories are used to manage the persistence of aggregates. Repositories are concerned only with persisting and retrieving aggregates. Repositories should be aligned to and use the language of the BoundedContext, and the operation should use the language of the business when naming methods and properties. We should place an abstraction layer between the dependent services and the client of the repository.
 
-- **Entities**: Entities are used to represent entities in the domain. They are used to represent entities in the domain and are used to enforce identity in the domain.
+- **Entities**: Entities are used to represent entities in the domain and are mutable meaning we expect them to change over time. Entities have identity and require consistency we must managed there state and track any changes.
 
-- **Value Objects**: Value Objects are used to represent values in the domain. They are used to represent values in the domain and are used to enforce immutability in the domain.
+- **Value Objects**: Value Objects are used to represent values in the domain. They are used to represent values in the domain and are used to enforce immutability in the domain. Value objects represent things like money, dates, address, and other values that are used in the domain.
 
 - **Domain Services**: Domain Services are used to encapsulate domain logic. They are used to encapsulate domain logic and are used to enforce domain rules in the domain.
 
