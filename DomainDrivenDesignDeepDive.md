@@ -53,9 +53,9 @@ When creating the domain model in code, use the language of the business to name
 
 **Ubiquitous Language**: The Ubiquitous Language is the language of the business. It is used by the development team to name the classes and methods in the code.
 
-Next, we will have to focus on each Event and dig deeper into the events based on `concert scenarios` that are involved in the domain. This will help to understand the events better and how they are used in the domain. We will focus on the use cases aligned with the concert scenarios that are involved in the domain.
+Next, we will have to focus on each Event and dig deeper into the events based on `concrete scenarios` that are involved in the domain. This will help to understand the events better and how they are used in the domain. We will focus on the use cases aligned with the concrete scenarios that are involved in the domain.
 
-Now that we have discovered and defined the concert scenarios that are involved in the domain, we can now focus on the details of the events that are involved in the domain.
+Now that we have discovered and defined the concrete scenarios that are involved in the domain, we can now focus on the details of the events that are involved in the domain.
 
 After discovering and defining Domain Events in Domain-Driven Design (DDD), the next steps usually involve diving into the solution space and beginning the process of building the Code Model. At this point, we have crossed into the solution space and are using the artifacts that were created in the problem space to build the code model.
 
