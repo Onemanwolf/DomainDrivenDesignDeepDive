@@ -27,31 +27,31 @@ Using the Ubiquitous language we discuss the business workflow or process and th
 
 - **Bounded Contexts**: Bounded Contexts are used to represent the language of the business. Additionally, they are used to enforce consistency boundaries in the domain. They have `Commands`, `Events`, `Aggregates`, `ViewModels`, `External Dependencies`, `Factories`, `Repositories`, `Entities`, `Value Objects`, and `Domain Services`.
 
-- **Actor**: An actor is a person or system that executes a command or triggers an event in the domain. They are used to represent the people or systems that interact with the domain.
+- **Actor** is a person or system that executes a command or triggers an event in the domain. They are used to represent the people or systems that interact with the domain.
 
-- **Commands**: Commands are used to change the state of the system. They are used to trigger events in the domain and are used to change the state of the system.
+- **Commands** are used to change the state of the system. They are used to trigger events in the domain and are used to change the state of the system.
 
-- **Events**: Events are used to communicate changes in the domain to other parts of the system. Additionally, they can trigger commands in other parts of the system.
+- **Events** are used to communicate changes in the domain to other parts of the system. Additionally, they can trigger commands in other parts of the system.
 
-- **Aggregates**: Aggregates are used to enforce consistency boundaries in the domain. They have Entities, Value Objects, and Domain Services.
+- **Aggregates** are used to enforce consistency boundaries in the domain. They have Entities, Value Objects, and Domain Services.
 
-- **ViewModels**: ViewModels are used by `Actors` and are displayed in the UI so person `Actors` can make decisions to execute a `Command`.
+- **ViewModels** are used by `Actors` and are displayed in the UI so person `Actors` can make decisions to execute a `Command`.
 
-- **External Dependencies**: External Dependencies are used to represent external dependencies in the domain. We need to understand the external dependencies that are involved in the domain and how they interact with the domain. We need to understand how the effect the system and what challenges they present.
+- **External Dependencies** are used to represent external dependencies in the domain. We need to understand the external dependencies that are involved in the domain and how they interact with the domain. We need to understand how the effect the system and what challenges they present.
 
-- **Factories**: Factories are used to create `aggregates`. They are used when there are complex business rules and invariants that need to be enforced consistency boundaries in the domain.
+- **Factories** are used to create `aggregates`. They are used when there are complex business rules and invariants that need to be enforced consistency boundaries in the domain.
 
-- **Repositories**: Repositories are used to manage the persistence of aggregates. Repositories are concerned only with persisting and retrieving aggregates. Repositories should be aligned to and use the language of the BoundedContext, and the operation should use the language of the business when naming methods and properties. We should place an abstraction layer between the dependent services and the client of the repository.
+- **Repositories** are used to manage the persistence of aggregates. Repositories are concerned only with persisting and retrieving aggregates. Repositories should be aligned to and use the language of the BoundedContext, and the operation should use the language of the business when naming methods and properties. We should place an abstraction layer between the dependent services and the client of the repository.
 
-- **Entities**: Entities are used to represent entities in the domain and are mutable meaning we expect them to change over time. Entities have identity and require consistency we must managed there state and track any changes.
+- **Entities** are used to represent entities in the domain and are mutable meaning we expect them to change over time. Entities have identity and require consistency we must managed there state and track any changes.
 
-- **Value Objects**: Value Objects are used to represent values in the domain. They are used to represent values in the domain and are used to enforce immutability in the domain. Value objects represent things like money, dates, address, and other values that are used in the domain.
+- **Value Objects** are used to represent values in the domain. They are used to represent values in the domain and are used to enforce immutability in the domain. Value objects represent things like money, dates, address, and other values that are used in the domain.
 
-- **Domain Services**: Domain Services are used to encapsulate domain logic. They are used to encapsulate domain logic and are used to enforce domain rules in the domain.
+- **Domain Services** are used to encapsulate domain logic. They are used to encapsulate domain logic and are used to enforce domain rules in the domain.
 
 When creating the domain model in code, use the language of the business to name the classes and methods. This will make the code easier to understand and maintain.
 
-**Ubiquitous Language**: The Ubiquitous Language is the language of the business. It is used by the development team to name the classes and methods in the code.
+**Ubiquitous Language** is the language of the business. It is used by the development team to name the classes and methods in the code.
 
 Next, we will have to focus on each Event and dig deeper into the events based on `concrete scenarios` that are involved in the domain. This will help to understand the events better and how they are used in the domain. We will focus on the use cases aligned with the concrete scenarios that are involved in the domain.
 
