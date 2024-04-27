@@ -1,3 +1,13 @@
+
+<style>
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+</style>
+
 ![image](./images/Designer.png)
 
 # Domain-Driven Design Events Deep Dive
@@ -65,12 +75,23 @@ After discovering and defining Domain Events in Domain-Driven Design (DDD), the 
 
 ### Events have Boundaries
 
-Events have boundaries; these boundaries encapsulate the behavior and Business language of the Event in what Eric Evans defines as a Bounded Context. The Bounded Context represents a linguistic boundary based on the language of the business, and a Bounded Context is one of the artifacts we discover during the EventStorm workshop. This Bounded Context of the Event encapsulates the behavior of the Event. The Bounded Context is a way to encapsulate the behavior of the Event, and the Event is a way to communicate changes in the domain to other parts of the system.
+Events belong to a boundary; these boundaries encapsulate the behavior and Business language. These boundaries is what Eric Evans defines as a `Bounded Context`. The Bounded Context represents a linguistic boundary based on the language of the business, and a Bounded Context is one of the artifacts we discover during the EventStorm workshop.
 
-Events are triggered by Commands, and the Commands are used to change the state of the system. The Commands are used to change the state of the system, and the Events are used to communicate changes in the domain to other parts of the system.
+This Bounded Context of the Event encapsulates the behavior and the properties of the Event. The Bounded Context Events provide a way to communicate changes in the domain to other parts of the system.
 
-![](./images/EventIllustration.png)
+Events are triggered by Commands, and the Commands are used to change the state of the system. Command can be successful or fail we need to design around this fact so one command could fire a different event based on its outcome. The Commands are used to change the state of the system, and the Events are used to communicate changes in the domain to other parts of the system.
 
+In the below image we can see the relationship between the Command and the Event. The Command is used to change the state of the A system, and the Event is used to communicate changes in the domain to other parts of the system here the B system.
+
+
+
+
+
+
+<img class="center" src="./images/EventIllustration.png" width="600" height="300"  >
+
+
+<p style="text-align: center;">figure 1: Command and Event relationship</p>
 We will discuss in detail Commands and Events in the next section.
 
 1. **Detailing the Event**: Identify the data that the event will carry. This is the data that is required by the downstream services or systems that handle this event in some cases. In some scenarios, the event could be a simple notification that something has happened, and no additional data is required. In case we could just pass the aggregate root identifier of the aggregate root that triggered the event. This is usually done by defining the event class with the necessary properties or fields that represent the data associated with the event.
