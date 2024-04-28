@@ -67,7 +67,9 @@ When creating the domain model in code, use the language of the business to name
 
 Next, we will have to focus on each Event and dig deeper into the events based on `concrete scenarios` that are involved in the domain. This will help to understand the events better and how they are used in the domain. We will focus on the use cases aligned with the concrete scenarios that are involved in the domain.
 
-Now that we have discovered and defined the concrete scenarios that are involved in the domain event, we can now focus on the details of the events.  We need to determine whether they a command mutating state or just a notification of some state change to another part of the system and there is no expection of the producer that the down stream completes any operation or processing. For example to notify someone or system that a transaction was completed or failed.
+Now that we have discovered and defined the concrete scenarios that are involved in the domain event, we can now focus on the details of the events.
+
+We need to determine whether the event is a command that is mutating state or if the event is  just a mechanism to notify of some state change to another part of the system and there is no expection of the producer that the down stream completes any operation or processing. For example to notify someone or system that a transaction was completed or failed.
 
 After discovering and defining Domain Events in Domain-Driven Design (DDD), while diving into and exploring the solution space we are now better prepared to beginning the process of building the Code Model. At this point, we have crossed into the solution space and are using the artifacts that were created in the problem space to build the code model.
 
