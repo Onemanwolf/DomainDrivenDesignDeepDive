@@ -1,12 +1,5 @@
 
-<style>
-.center{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
-}
-</style>
+
 
 ![image](./images/Designer.png)
 
@@ -35,7 +28,7 @@ Using the Ubiquitous language we discuss the business workflow or process and th
 
 **Artifacts**: These artifacts are:
 
-**Bounded Contexts**: Bounded Contexts are used to represent the language of the business. Additionally, they are used to enforce consistency boundaries in the domain. They have `Commands`, `Events`, `Aggregates`, `ViewModels`, `External Dependencies`, `Factories`, `Repositories`, `Entities`, `Value Objects`, and `Domain Services`.
+**Bounded Contexts**: Bounded Contexts are used to represent a language context boundary of the business. Additionally, they are used to enforce consistency boundaries in the domain. They have `Commands`, `Events`, `Aggregates`, `ViewModels`, `External Dependencies`, `Factories`, `Repositories`, `Entities`, `Value Objects`, and `Domain Services`. **Context is king** each context has its own language and rules and definitions for example a order in one context can have a different definition and meaning or agenda in another context.
 
  For more information on Bounded Contexts, check out the following resources:  [Bounded Contexts](https://martinfowler.com/bliki/BoundedContext.html)
 
@@ -74,9 +67,9 @@ When creating the domain model in code, use the language of the business to name
 
 Next, we will have to focus on each Event and dig deeper into the events based on `concrete scenarios` that are involved in the domain. This will help to understand the events better and how they are used in the domain. We will focus on the use cases aligned with the concrete scenarios that are involved in the domain.
 
-Now that we have discovered and defined the concrete scenarios that are involved in the domain, we can now focus on the details of the events that are involved in the domain.
+Now that we have discovered and defined the concrete scenarios that are involved in the domain event, we can now focus on the details of the events.  We need to determine whether they a command mutating state or just a notification of some state change to another part of the system and there is no expection of the producer that the down stream completes any operation or processing. For example to notify someone or system that a transaction was completed or failed.
 
-After discovering and defining Domain Events in Domain-Driven Design (DDD), the next steps usually involve diving into the solution space and beginning the process of building the Code Model. At this point, we have crossed into the solution space and are using the artifacts that were created in the problem space to build the code model.
+After discovering and defining Domain Events in Domain-Driven Design (DDD), while diving into and exploring the solution space we are now better prepared to beginning the process of building the Code Model. At this point, we have crossed into the solution space and are using the artifacts that were created in the problem space to build the code model.
 
 ### Events have Boundaries
 
@@ -127,6 +120,8 @@ In your scenario, if you're dealing with something that has already happened in 
 
 It's important to note that while an event can trigger a command, they are not the same thing and should not be used interchangeably. Mixing these concepts can lead to confusion and can make the system harder to understand and maintain.
 
+
+## Domain-Driven Design (DDD) Reference and continue learning resources
 
 The creator of Domain Driven Design is `Eric Evans`. He wrote a book called[ Domain Driven Design: Tackling Complexity in the Heart of Software](https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215). The book is a must-read for anyone interested in software design and architecture. It provides a comprehensive overview of the principles and practices of Domain Driven Design and explains how to apply them in practice.
 
