@@ -35,7 +35,10 @@ Using the Ubiquitous language we discuss the business workflow or process and th
 
 **Artifacts**: These artifacts are:
 
-- **Bounded Contexts**: Bounded Contexts are used to represent the language of the business. Additionally, they are used to enforce consistency boundaries in the domain. They have `Commands`, `Events`, `Aggregates`, `ViewModels`, `External Dependencies`, `Factories`, `Repositories`, `Entities`, `Value Objects`, and `Domain Services`.
+**Bounded Contexts**: Bounded Contexts are used to represent the language of the business. Additionally, they are used to enforce consistency boundaries in the domain. They have `Commands`, `Events`, `Aggregates`, `ViewModels`, `External Dependencies`, `Factories`, `Repositories`, `Entities`, `Value Objects`, and `Domain Services`.
+
+ For more information on Bounded Contexts, check out the following resources:  [Bounded Contexts](https://martinfowler.com/bliki/BoundedContext.html)
+
 
 - **Actor** is a person or system that executes a command or triggers an event in the domain. They are used to represent the people or systems that interact with the domain.
 
@@ -43,7 +46,9 @@ Using the Ubiquitous language we discuss the business workflow or process and th
 
 - **Events** are used to communicate changes in the domain to other parts of the system. Additionally, they can trigger commands in other parts of the system.
 
-- **Aggregates** are used to enforce consistency boundaries in the domain. They have Entities, Value Objects, and Domain Services.
+* **Aggregates** are used to enforce consistency boundaries in the domain. Aggregates have Entities, and Value Objects. Aggregates are a group of related objects that are treated as a single unit. Aggregates have a root Entity and the roots related objects. For example a User object can be made up of Entities and value objects and only through the root Entity can changes be made to it's internal value objects or Entities.
+Aggregates allow us to enforce business rules and invariants object included of the data.
+    - For more information on Aggregates: [An In-Depth Understanding of Aggregation in Domain-Driven Design](https://www.alibabacloud.com/blog/an-in-depth-understanding-of-aggregation-in-domain-driven-design_598034)
 
 - **ViewModels** are used by `Actors` and are displayed in the UI so person `Actors` can make decisions to execute a `Command`.
 
@@ -75,7 +80,7 @@ After discovering and defining Domain Events in Domain-Driven Design (DDD), the 
 
 ### Events have Boundaries
 
-Events belong to a boundary; these boundaries encapsulate the behavior and Business language. These boundaries is what Eric Evans defines as a `Bounded Context`. The Bounded Context represents a linguistic boundary based on the language of the business, and a Bounded Context is one of the artifacts we discover during the EventStorm workshop.
+Events belong to a boundary; these boundaries encapsulate the behavior and Business language. These boundaries is what Eric Evans defines as a `Bounded Context` which is part of the strategic logical model of the problem space. The Bounded Context represents a linguistic boundary based on the language of the business, and a Bounded Context is one of the artifacts we discover during the EventStorm workshop.
 
 This Bounded Context of the Event encapsulates the behavior and the properties of the Event. The Bounded Context Events provide a way to communicate changes in the domain to other parts of the system.
 
@@ -84,12 +89,16 @@ Events are triggered by Commands, and the Commands are used to change the state 
 In the below image we can see the relationship between the Command and the Event. The Command is used to change the state of the A system, and the Event is used to communicate changes in the domain to other parts of the system here the B system.
 
 <figure>
-<img class="center" src="./images/EventIllustration.png" width="600" height="300"  >
+<img  src="./images/EventIllustration.png" width="700" height="350"  >
 
 
 <p style="text-align: center;">figure 1: Command and Event relationship</p>
 We will discuss in detail Commands and Events in the next section.
 </figure>
+
+**Example** when the state changes in the A system, the Event is triggered and the Event is used to communicate changes in the domain to the B system. The B system can then react to the Event and change its state based on the Event.
+
+
 1. **Detailing the Event**: Identify the data that the event will carry. This is the data that is required by the downstream services or systems that handle this event in some cases. In some scenarios, the event could be a simple notification that something has happened, and no additional data is required. In case we could just pass the aggregate root identifier of the aggregate root that triggered the event. This is usually done by defining the event class with the necessary properties or fields that represent the data associated with the event.
 
     - Example: If you have an `OrderCreated` event, you might want to include the `orderId`, `customerId`, `orderDate`, and other relevant information in the event payload.
