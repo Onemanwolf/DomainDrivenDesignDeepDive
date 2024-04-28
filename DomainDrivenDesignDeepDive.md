@@ -35,13 +35,52 @@ Using the Ubiquitous language we discuss the business workflow or process and th
 
 - **Actor** is a person or system that executes a command or triggers an event in the domain. They are used to represent the people or systems that interact with the domain.
 
+
+
 - **Commands** are used to change the state of the system. They are used to trigger events in the domain and are used to change the state of the system.
 
 - **Events** are used to communicate changes in the domain to other parts of the system. Additionally, they can trigger commands in other parts of the system.
 
 * **Aggregates** are used to enforce consistency boundaries in the domain. Aggregates have Entities, and Value Objects. Aggregates are a group of related objects that are treated as a single unit. Aggregates have a root Entity and the roots related objects. For example a User object can be made up of Entities and value objects and only through the root Entity can changes be made to it's internal value objects or Entities.
 Aggregates allow us to enforce business rules and invariants object included of the data.
-    - For more information on Aggregates: [An In-Depth Understanding of Aggregation in Domain-Driven Design](https://www.alibabacloud.com/blog/an-in-depth-understanding-of-aggregation-in-domain-driven-design_598034)
+
+Example of Order Aggregate the root entity is the Order:
+
+```csharp
+public class OrderItem
+{
+    public string ProductId { get; private set; }
+    public int Quantity { get; private set; }
+
+    public OrderItem(string productId, int quantity)
+    {
+        ProductId = productId;
+        Quantity = quantity;
+    }
+}
+
+public class Order
+{
+    public Guid Id { get; private set; }
+    public CustomerId CustomerId { get; private set; }
+    public List<OrderItem> Items { get; private set; }
+
+    public Order(Guid customerId)
+    {
+        Id = Guid.NewGuid();
+        CustomerId = customerId;
+        Items = new List<OrderItem>();
+    }
+
+    public void AddItem(OrderItem item)
+    {
+        Items.Add(item);
+    }
+}
+
+
+```
+For more information on Aggregates: [An In-Depth Understanding of Aggregation in Domain-Driven Design](https://www.alibabacloud.com/blog/an-in-depth-understanding-of-aggregation-in-domain-driven-design_598034)
 
 - **ViewModels** are used by `Actors` and are displayed in the UI so person `Actors` can make decisions to execute a `Command`.
 
